@@ -1,11 +1,3 @@
-/**
- * Cloudflare Worker: nhận form liên hệ, gửi email qua Maileroo API.
- * Cấu hình trong Cloudflare: Workers & Pages → Worker này → Settings → Variables
- * - MAILEROO_API_KEY (secret)
- * - FROM_EMAIL (vd: andyvu@activefingers.com, domain đã verify trên Maileroo)
- * - TO_EMAIL (nhận thư, vd: andyvu@activefingers.com)
- */
-
 const MAILEROO_URL = "https://smtp.maileroo.com/api/v2/emails";
 
 export default {
@@ -25,14 +17,12 @@ export default {
     }
 
     const apiKey = env.MAILEROO_API_KEY;
-    const fromEmail = (env.FROM_EMAIL && String(env.FROM_EMAIL).trim()) || "noreply@activefingers.com";
-    const toEmail = (env.TO_EMAIL && String(env.TO_EMAIL).trim()) || "andyvu@activefingers.com";
+    const fromEmailRaw = (env.FROM_EMAIL && String(env.FROM_EMAIL).trim()) || "";
+    const fromEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fromEmailRaw) ? fromEmailRaw : "55abbcb854c9a477.maileroo.org";
+    const toEmail = (env.TO_EMAIL && String(env.TO_EMAIL).trim()) || "phongvuminh2003@gmail.com";
 
     if (!apiKey) {
       return json({ success: false, message: "Server missing MAILEROO_API_KEY" }, 500);
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fromEmail)) {
-      return json({ success: false, message: "Invalid or missing FROM_EMAIL; set a valid address on your verified domain in Cloudflare Variables" }, 500);
     }
 
     let body;
@@ -56,23 +46,25 @@ export default {
       <p><strong>Message:</strong></p>
       <pre>${escapeHtml(message)}</pre>
     `;
+    const plain = `Name: ${[fname, lname].filter(Boolean).join(" ") || "—"}\nEmail: ${email}\nPhone: ${phone || "—"}\n\n${message}`;
+
+    // Maileroo bắt buộc: from/to là object có "address" và (tùy chọn) "display_name". Không gửi key khác.
+    const fromObj = { address: fromEmail, display_name: "Active Fingers Website" };
+    const toObj = [{ address: toEmail }];
 
     const mailerooBody = {
-      from: {
-        address: String(fromEmail),
-        display_name: "Active Fingers Website",
-      },
-      to: [{ address: String(toEmail) }],
-      reply_to: [{ address: email, display_name: `${fname} ${lname}`.trim() || email }],
+      from: fromObj,
+      to: toObj,
       subject,
       html,
+      plain,
     };
 
     const res = await fetch(MAILEROO_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-Api-Key": apiKey,
+        Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify(mailerooBody),
     });
