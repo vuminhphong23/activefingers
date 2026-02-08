@@ -54,13 +54,7 @@
     box-shadow: none;
 }
 
-body {
-    color: var(--base-color);
-    background: #010101;
-    font-weight: 400;
-    line-height: 32px;
-    font-size: 16px;
-    font-family: var(--base-font);
+:root {
     --base-font: 'Plus Jakarta Sans', sans-serif;
     --heading-font: 'Plus Jakarta Sans', sans-serif;
     --script-font: 'Playfair Display', serif;
@@ -69,6 +63,15 @@ body {
     --base-color: #83827F;
     --lighter-color: rgba(255, 255, 255, 0.06);
     --border-color: rgba(92, 99, 123, 0.3);
+}
+
+body {
+    color: var(--base-color) !important;
+    background: #010101 !important;
+    font-weight: 400;
+    line-height: 32px;
+    font-size: 16px;
+    font-family: var(--base-font);
 }
 
 a {
