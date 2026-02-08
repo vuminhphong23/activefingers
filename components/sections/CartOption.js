@@ -49,7 +49,7 @@ const CartOption = ({ title, content, items, imageSrc, imageItems }) => {
                         alt={title || "illustration"}
                         className="cart-option-image"
                     />
-                    {/* List mới nằm trên ảnh */}
+                    {/* Options list overlaid on image */}
 
                 </div>
             </div>

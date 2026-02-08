@@ -9,11 +9,8 @@ import Header from './header/Header'
 
 export default function Layout({ bodyCls, breadcrumbTitle, children }) {
     const [scroll, setScroll] = useState(0)
-    // Moblile Menu
     const [isMobileMenu, setMobileMenu] = useState(false)
     const handleMobileMenu = () => setMobileMenu(!isMobileMenu)
-
-    // Sidebar
     const [isSidebar, setSidebar] = useState(false)
     const handleSidebar = () => {
         setSidebar(!isSidebar)

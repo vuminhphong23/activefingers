@@ -25,7 +25,8 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata = {
-    title: 'Agincy - Digital Agency Nextjs Template',
+    title: 'Active Fingers',
+    description: 'Active Fingers - Digital solutions and development',
 }
 
 export default function RootLayout({ children }) {

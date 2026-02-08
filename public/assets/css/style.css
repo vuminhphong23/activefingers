@@ -10737,6 +10737,33 @@ blockquote .blockquote-footer:before {
     margin-top: 10px;
 }
 
+/* Contact form card & loading spinner */
+.contact-form-card .form-control {
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+}
+.contact-form-card .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.contact-form-card .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(196, 239, 23, 0.2);
+    color: #fff;
+}
+.contact-form-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: contact-form-spin 0.7s linear infinite;
+}
+@keyframes contact-form-spin {
+    to { transform: rotate(360deg); }
+}
+
 /*******************************************************/
 /****************** ## Videos Area ********************/
 /*******************************************************/

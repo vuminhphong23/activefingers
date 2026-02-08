@@ -7,24 +7,21 @@ export default function CartItem({ title, options }) {
                 )}
                 <div className="space-y-4">
                     {options.map((item, index) => {
-                        // Kiểm tra nếu có "IT Supported" thì bôi đậm
                         const hasHighlight = item.includes("IT Supported") || item.includes("Sitecore v8");
 
                         if (hasHighlight) {
-                            // Tách từng từ cần in đậm
                             let parts = [];
                             let remaining = item;
 
                             ["IT Supported", "Sitecore v8"].forEach((keyword) => {
                                 const index = remaining.indexOf(keyword);
                                 if (index !== -1) {
-                                    parts.push(remaining.slice(0, index)); // text trước keyword
-                                    parts.push(<strong key={keyword} className="font-bold">{keyword}</strong>); // keyword in đậm
-                                    remaining = remaining.slice(index + keyword.length); // phần còn lại
+                                    parts.push(remaining.slice(0, index));
+                                    parts.push(<strong key={keyword} className="font-bold">{keyword}</strong>);
+                                    remaining = remaining.slice(index + keyword.length);
                                 }
                             });
 
-                            // Thêm phần còn lại nếu có
                             if (remaining) {
                                 parts.push(remaining);
                             }
