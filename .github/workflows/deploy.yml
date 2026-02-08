@@ -25,7 +25,7 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          NEXT_PUBLIC_SEND_EMAIL_URL: ${{ vars.SEND_EMAIL_WORKER_URL }}
+          NEXT_PUBLIC_SEND_EMAIL_URL: ${{ secrets.SEND_EMAIL_WORKER_URL }}
 
       # Next.js "output: export" writes static site to ./out — must deploy this folder only
       - name: Verify build output
