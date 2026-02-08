@@ -17,12 +17,23 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
+
+      # Next.js "output: export" writes static site to ./out — must deploy this folder only
+      - name: Verify build output
+        run: |
+          if [ ! -f out/index.html ]; then
+            echo "Build failed: out/index.html not found. Server will show wrong page if you deploy repo root."
+            exit 1
+          fi
+          echo "Build OK. Contents of out/:"
+          ls -la out/
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
