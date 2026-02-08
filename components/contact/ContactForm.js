@@ -3,7 +3,8 @@
 import { useState } from "react";
 
 const SEND_EMAIL_URL =
-  process.env.NEXT_PUBLIC_SEND_EMAIL_URL;
+  process.env.NEXT_PUBLIC_SEND_EMAIL_URL ||
+  "https://activefingers.phongvuminh2003.workers.dev";
 
 export default function ContactForm() {
   const [status, setStatus] = useState(""); // "sending" | "success" | "error"

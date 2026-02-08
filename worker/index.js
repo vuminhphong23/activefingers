@@ -76,8 +76,7 @@ export default {
     if (!res.ok) {
       return json(
         { success: false, message: data.message || "Maileroo request failed" },
-        res.status,
-        res.headers
+        res.status
       );
     }
 
