@@ -1,5 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import Link from "next/link";
+import ContactForm from "@/components/contact/ContactForm";
+
 export default function Contact() {
   return (
     <>
@@ -50,73 +52,7 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-              <div className="contact-page-form wow fadeInUp delay-0-2s">
-                <form action="#" method="post">
-                  <div className="row">
-                    <div className="col-md-6 wow fadeInUp delay-0-2s">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="fname"
-                          name="fname"
-                          className="form-control"
-                          placeholder="First Name*"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6 wow fadeInUp delay-0-4s">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="lname"
-                          name="lname"
-                          className="form-control"
-                          placeholder="Last Name*"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6 wow fadeInUp delay-0-2s">
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          className="form-control"
-                          placeholder="Email Address*"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-6 wow fadeInUp delay-0-4s">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="phone"
-                          name="phone"
-                          className="form-control"
-                          placeholder="Phone Number*"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12 wow fadeInUp delay-0-2s">
-                      <div className="form-group">
-                        <textarea
-                          name="message"
-                          id="message"
-                          className="form-control"
-                          rows={8}
-                          placeholder="Enter Your Messege"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-12 text-center wow fadeInUp delay-0-2s">
-                      <button type="submit" className="theme-btn style-two">
-                        Send Massage
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
+              <ContactForm />
             </div>
           </section>
           {/* Contact Page Area end */}
