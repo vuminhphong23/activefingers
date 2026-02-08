@@ -3,5 +3,5 @@ main = "index.js"
 compatibility_date = "2024-01-01"
 
 [vars]
-FROM_EMAIL = "noreply@activefingers.com"
-TO_EMAIL = "andyvu@activefingers.com"
+FROM_EMAIL = "activefingers@55abbcb854c9a477.maileroo.org"
+TO_EMAIL = "phongvuminh2003@gmail.com"
