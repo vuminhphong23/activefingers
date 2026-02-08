@@ -17,16 +17,11 @@ export default {
     }
 
     const apiKey = env.MAILEROO_API_KEY;
-    const fromEmailRaw = (env.FROM_EMAIL && String(env.FROM_EMAIL).trim()) || "";
-    const fromEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fromEmailRaw) ? fromEmailRaw : "noreply@activefingers.com";
-    const toEmail = (env.TO_EMAIL && String(env.TO_EMAIL).trim()) || "phongvuminh2003@gmail.com";
+    const fromEmail = env.FROM_EMAIL;
+    const toEmail = (env.TO_EMAIL && String(env.TO_EMAIL).trim());
 
     if (!apiKey) {
       return json({ success: false, message: "Server missing MAILEROO_API_KEY" }, 500);
-    }
-    const fromAddress = String(fromEmail);
-    if (!fromAddress || !fromAddress.includes("@")) {
-      return json({ success: false, message: "FROM_EMAIL invalid or not set. Set it in Cloudflare Worker: Settings → Variables and Secrets, or in worker/wrangler.toml [vars]. Then run: cd worker && npx wrangler deploy" }, 500);
     }
 
     let body;
@@ -46,7 +41,7 @@ export default {
     const plain = `Name: ${fullName}\nEmail: ${email}\nPhone: ${phone || "—"}\n\n${message}`;
     const html = buildEmailHtml({ fullName, email, phone, message });
 
-    const fromObj = { address: fromAddress, display_name: "Active Fingers Website" };
+    const fromObj = { address: fromEmail, display_name: "Active Fingers Website" };
     const toObj = [{ address: String(toEmail) }];
 
     const mailerooBody = {
