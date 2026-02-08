@@ -56,7 +56,6 @@ export default function Menu() {
                     onMouseLeave={() => handleClick(3)}>
                     <Link href="/services">Services</Link>
                     <ul style={{ display: isActive.key == 3 ? 'block' : 'none' }}>
-                        <li><Link href="/services">All Services</Link></li>
                         <li><Link href="/software-development">Software Development</Link></li>
                         <li><Link href="/app-development">App Development</Link></li>
                         <li><Link href="/managed-services">Managed IT Services</Link></li>
