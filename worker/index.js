@@ -25,11 +25,14 @@ export default {
     }
 
     const apiKey = env.MAILEROO_API_KEY;
-    const fromEmail = env.FROM_EMAIL || "noreply@activefingers.com";
-    const toEmail = env.TO_EMAIL || "andyvu@activefingers.com";
+    const fromEmail = (env.FROM_EMAIL && String(env.FROM_EMAIL).trim()) || "noreply@activefingers.com";
+    const toEmail = (env.TO_EMAIL && String(env.TO_EMAIL).trim()) || "andyvu@activefingers.com";
 
     if (!apiKey) {
       return json({ success: false, message: "Server missing MAILEROO_API_KEY" }, 500);
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fromEmail)) {
+      return json({ success: false, message: "Invalid or missing FROM_EMAIL; set a valid address on your verified domain in Cloudflare Variables" }, 500);
     }
 
     let body;
@@ -55,8 +58,11 @@ export default {
     `;
 
     const mailerooBody = {
-      from: { address: fromEmail, display_name: "Active Fingers Website" },
-      to: [{ address: toEmail }],
+      from: {
+        address: String(fromEmail),
+        display_name: "Active Fingers Website",
+      },
+      to: [{ address: String(toEmail) }],
       reply_to: [{ address: email, display_name: `${fname} ${lname}`.trim() || email }],
       subject,
       html,
