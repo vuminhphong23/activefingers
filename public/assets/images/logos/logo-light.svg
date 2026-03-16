@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="220" height="60">
+  <!-- Icon bg -->
+  <rect width="60" height="60" rx="12" fill="#111111"/>
+  <!-- Fingerprint arcs -->
+  <path d="M 24,34 A 6,6 0 0,1 36,34" fill="none" stroke="#AADD00" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 21,34 A 9,9 0 0,1 39,34" fill="none" stroke="#AADD00" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 18,34 A 12,12 0 0,1 42,34" fill="none" stroke="#AADD00" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 15,34 A 15,15 0 0,1 45,34" fill="none" stroke="#AADD00" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 12,34 A 18,18 0 0,1 48,34" fill="none" stroke="#AADD00" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="30" cy="34" r="3.2" fill="#AADD00"/>
+  <!-- Wordmark: "active" dark, "fingers" lime -->
+  <text x="72" y="38" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="22" letter-spacing="-0.5" fill="#111111">active</text>
+  <text x="140" y="38" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="22" letter-spacing="-0.5" fill="#AADD00">fingers</text>
+</svg>

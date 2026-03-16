@@ -19,9 +19,16 @@ export default function Header({
               <div className="logo">
                 <Link href="/">
                   <img
-                    src="/assets/images/logos/logo.png"
-                    alt="Logo"
-                    title="Logo"
+                    className="logo-brand-dark"
+                    src="/assets/images/logos/logo-dark.svg"
+                    alt="Active Fingers"
+                    title="Active Fingers"
+                  />
+                  <img
+                    className="logo-brand-light"
+                    src="/assets/images/logos/logo-light.svg"
+                    alt="Active Fingers"
+                    title="Active Fingers"
                   />
                 </Link>
               </div>
@@ -32,9 +39,16 @@ export default function Header({
                   <div className="mobile-logo">
                     <Link href="/">
                       <img
-                        src="/assets/images/logos/logo.png"
-                        alt="Logo"
-                        title="Logo"
+                        className="logo-brand-dark"
+                        src="/assets/images/logos/logo-dark.svg"
+                        alt="Active Fingers"
+                        title="Active Fingers"
+                      />
+                      <img
+                        className="logo-brand-light"
+                        src="/assets/images/logos/logo-light.svg"
+                        alt="Active Fingers"
+                        title="Active Fingers"
                       />
                     </Link>
                   </div>

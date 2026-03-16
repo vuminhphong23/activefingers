@@ -143,6 +143,25 @@ img {
     display: inline-block;
 }
 
+/* Theme-aware branding logos */
+.logo-brand-dark,
+.logo-brand-light {
+    display: none;
+}
+
+body.dark-theme .logo-brand-light {
+    display: inline-block;
+}
+
+body.dark-theme .logo-brand-dark {
+    display: none;
+}
+
+body.light-theme .logo-brand-dark,
+body:not(.dark-theme) .logo-brand-dark {
+    display: inline-block;
+}
+
 mark {
     color: var(--primary-color);
     background: transparent;
