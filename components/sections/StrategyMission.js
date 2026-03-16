@@ -18,19 +18,19 @@ export default function StrategyMission() {
                                 <div className="row pt-20">
                                     <div className="col-xl-4 col-lg-3 col-md-4 col-6 col-small">
                                         <div className="counter-item counter-text-wrap">
-                                            <CounterUp count={8} time={3} k />
+                                            <CounterUp count={30} time={3} />
                                             <h6 className="counter-title">Projects Delivered</h6>
                                         </div>
                                     </div>
                                     <div className="col-xl-4 col-lg-3 col-md-4 col-6 col-small">
                                         <div className="counter-item counter-text-wrap">
-                                            <CounterUp count={28} time={3} />
-                                            <h6 className="counter-title">Award Achievement</h6>
+                                            <CounterUp count={18} time={3} />
+                                            <h6 className="counter-title">Certification Achievement</h6>
                                         </div>
                                     </div>
                                     <div className="col-xl-4 col-lg-3 col-md-4 col-6 col-small">
                                         <div className="counter-item counter-text-wrap">
-                                            <CounterUp count={80} time={3} k />
+                                            <CounterUp count={80} time={3} />
                                             <h6 className="counter-title">Satisfied Customers</h6>
                                         </div>
                                     </div>
