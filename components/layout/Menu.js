@@ -59,7 +59,7 @@ export default function Menu() {
                         <li><Link href="/software-development">Software Development</Link></li>
                         <li><Link href="/app-development">App Development</Link></li>
                         <li><Link href="/managed-services">Managed IT Services</Link></li>
-                        <li><Link href="/sitecore-development">Sitecore Development</Link></li>
+                        <li><Link href="/cms-development">CMS Development</Link></li>
                     </ul>
                 </li>
                 <li className="dropdown"

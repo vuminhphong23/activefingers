@@ -21,8 +21,8 @@ const services = [
     image: "/assets/images/services/managed-services/file1.jpg",
   },
   {
-    slug: "sitecore-development",
-    title: "Sitecore Development",
+    slug: "cms-development",
+    title: "CMS Development",
     excerpt: "Digital Experience Platform (DXP) and CMS solutions. Content, commerce, and personalization at scale.",
     image: "/assets/images/services/sitecore-development/file2.jpg",
   },

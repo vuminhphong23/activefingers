@@ -128,12 +128,12 @@ export default function ServicesThree2() {
                     <img src="/assets/images/icons/test.png" alt="Icon" />
                   </div>
                   <h6>
-                    <Link href="/sitecore-development">Sitecore Development</Link>
+                    <Link href="/cms-development">CMS Development</Link>
                   </h6>
                 </div>
                 <div className="content">
                   <h6>
-                    <Link href="/sitecore-development">Sitecore Development</Link>
+                    <Link href="/cms-development">CMS Development</Link>
                   </h6>
                   <p>
                     Digital Experience Platform (DXP) and CMS solutions. Content, commerce, and personalization at scale.
