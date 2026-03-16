@@ -10,8 +10,8 @@ export default function Footer() {
                         <div className="footer-widget widget-about wow fadeInUp delay-0-2s">
                             <div className="footer-logo mb-15">
                                 <Link href="/">
-                                    <img className="logo-brand-light" src="/assets/images/logos/logo-wordmark-light-text.svg" alt="Active Fingers" />
-                                    <img className="logo-brand-dark" src="/assets/images/logos/logo-wordmark-dark-text.svg" alt="Active Fingers" />
+                                    <img className="logo-brand-dark" src="/assets/images/logos/logo-wordmark-light-text.svg" alt="Active Fingers" />
+                                    <img className="logo-brand-light" src="/assets/images/logos/logo-wordmark-dark-text.svg" alt="Active Fingers" />
                                 </Link>
                             </div>
                             <p>We create innovative digital solutions for brands and businesses.</p>
